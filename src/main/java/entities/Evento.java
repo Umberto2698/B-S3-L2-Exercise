@@ -17,6 +17,7 @@ public class Evento {
     private TipoEvento tipo_evento;
     private int numero_massimo_partecipanti;
 
+    public Evento(){};
     public Evento(String titolo, Date dataEvento, String descrizione, TipoEvento tipoevento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
         this.data_evento = dataEvento;

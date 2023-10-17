@@ -22,4 +22,9 @@ public class EventoDAO {
         System.err.println("Evento salvato:");
         System.out.println(event);
     }
+
+    public Evento findById(long id) {
+        // SELECT * FROM students WHERE students.id=1
+        return em.find(Evento.class, id);
+    }
 }

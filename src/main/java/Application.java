@@ -17,15 +17,21 @@ public class Application {
         Supplier<Evento> privateEventSupplier=()-> new Evento(faker.name().fullName(),faker.date().birthday(),"Consuelnza per impianto fotovoltaico", TipoEvento.PRIVATO, faker.number().numberBetween(2,10) );
         Supplier<Evento> publicEventSupplier=()-> new Evento(faker.name().fullName(),faker.date().birthday(),"Matrimonio", TipoEvento.PUBBLICO, faker.number().numberBetween(30,100) );
 try {
-    for (int i = 0; i < 2; i++) {
-        EventoDAO ed=new EventoDAO(em);
-        Evento event;
-        if(i%2==0){
-            event = privateEventSupplier.get();
-        }else{
-            event = publicEventSupplier.get();
-        }
-        ed.save(event);
+//    for (int i = 0; i < 2; i++) {
+//        EventoDAO ed=new EventoDAO(em);
+//        Evento event;
+//        if(i%2==0){
+//            event = privateEventSupplier.get();
+//        }else{
+//            event = publicEventSupplier.get();
+//        }
+//        ed.save(event);
+//    }
+    EventoDAO ed=new EventoDAO(em);
+
+    Evento eventFromDB= ed.findById(6);
+    if(eventFromDB!=null){
+        System.out.println(eventFromDB);
     }
 }catch (Exception ex){
     System.err.println(ex.getMessage());
