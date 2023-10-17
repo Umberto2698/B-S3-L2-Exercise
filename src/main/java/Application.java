@@ -29,10 +29,13 @@ try {
 //    }
     EventoDAO ed=new EventoDAO(em);
 
-    Evento eventFromDB= ed.findById(6);
-    if(eventFromDB!=null){
-        System.out.println(eventFromDB);
-    }
+//    Evento eventFromDB= ed.findById(6);
+//    if(eventFromDB!=null){
+//        System.out.println(eventFromDB);
+//    }
+    ed.findByIdAndDelete(5);
+
+
 }catch (Exception ex){
     System.err.println(ex.getMessage());
 }finally {

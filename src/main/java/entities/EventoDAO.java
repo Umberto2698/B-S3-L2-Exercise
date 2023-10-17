@@ -24,7 +24,19 @@ public class EventoDAO {
     }
 
     public Evento findById(long id) {
-        // SELECT * FROM students WHERE students.id=1
         return em.find(Evento.class, id);
     }
-}
+
+    public void findByIdAndDelete(long id) {
+        Evento found =findById(id);
+
+        if (found != null) {
+            EntityTransaction transaction = em.getTransaction();
+            transaction.begin();
+            em.remove(found);
+            transaction.commit();
+            System.out.println("L'evento è stato cancellato correttamente");
+        } else {
+            System.err.println("L'evento con l'id " + id + " non è stato trovato");
+        }
+}}
