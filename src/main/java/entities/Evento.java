@@ -11,18 +11,30 @@ public class Evento {
     @GeneratedValue
     private long id;
     private String titolo;
-    private Date dataEvento;
+    private Date data_evento;
     private String descrizione;
     @Enumerated(EnumType.STRING)
-    private TipoEvento tipoevento;
-    private int numeroMassimoPartecipanti;
+    private TipoEvento tipo_evento;
+    private int numero_massimo_partecipanti;
 
     public Evento(String titolo, Date dataEvento, String descrizione, TipoEvento tipoevento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
-        this.dataEvento = dataEvento;
+        this.data_evento = dataEvento;
         this.descrizione = descrizione;
-        this.tipoevento = tipoevento;
-        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+        this.tipo_evento = tipoevento;
+        this.numero_massimo_partecipanti = numeroMassimoPartecipanti;
+    }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "id=" + id +
+                ", titolo='" + titolo + '\'' +
+                ", dataEvento=" + data_evento +
+                ", descrizione='" + descrizione + '\'' +
+                ", tipoevento=" + tipo_evento +
+                ", numeroMassimoPartecipanti=" + numero_massimo_partecipanti +
+                '}';
     }
 
     public long getId() {
@@ -34,7 +46,7 @@ public class Evento {
     }
 
     public Date getDataEvento() {
-        return dataEvento;
+        return data_evento;
     }
 
     public String getDescrizione() {
@@ -42,11 +54,11 @@ public class Evento {
     }
 
     public TipoEvento getTipoevento() {
-        return tipoevento;
+        return tipo_evento;
     }
 
     public int getNumeroMassimoPartecipanti() {
-        return numeroMassimoPartecipanti;
+        return numero_massimo_partecipanti;
     }
 
     public void setTitolo(String titolo) {
@@ -54,7 +66,7 @@ public class Evento {
     }
 
     public void setDataEvento(Date dataEvento) {
-        this.dataEvento = dataEvento;
+        this.data_evento = dataEvento;
     }
 
     public void setDescrizione(String descrizione) {
@@ -62,10 +74,10 @@ public class Evento {
     }
 
     public void setTipoevento(TipoEvento tipoevento) {
-        this.tipoevento = tipoevento;
+        this.tipo_evento = tipoevento;
     }
 
     public void setNumeroMassimoPartecipanti(int numeroMassimoPartecipanti) {
-        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+        this.numero_massimo_partecipanti = numeroMassimoPartecipanti;
     }
 }

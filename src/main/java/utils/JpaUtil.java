@@ -1,4 +1,4 @@
-package entities;
+package utils;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -8,7 +8,7 @@ public class JpaUtil {
 
     static {
         try {
-            entityManagerFactory= Persistence.createEntityManagerFactory("simplejpa");
+            entityManagerFactory= Persistence.createEntityManagerFactory("gestioneventi");
 
         }catch (Throwable ex){
             System.err.println("Initial EntityManagerFactory creation failed." + ex);
