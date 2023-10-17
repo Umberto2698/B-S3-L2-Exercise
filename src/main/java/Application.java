@@ -35,6 +35,16 @@ try {
 //    }
     ed.findByIdAndDelete(5);
 
+    Evento eventFromDB = ed.findById(6);
+    if (eventFromDB != null) {
+        eventFromDB.setTipoevento(TipoEvento.PRIVATO);
+        System.out.println("PRE REFRESH");
+        System.out.println(eventFromDB);
+
+        em.refresh(eventFromDB);
+        System.out.println("POST REFRESH");
+        System.out.println(eventFromDB);
+    }
 
 }catch (Exception ex){
     System.err.println(ex.getMessage());
